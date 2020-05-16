@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- menu Include  -->
+    <th:block th:include="/_menu"></th:block>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row" id="main">
+                <!--  				<div class="col-sm-12 col-md-12 well" id="content"> -->
+                <!-- Content -->
+
+                <div class="form-container">
+                    <h2>Cadastrar <b>Veículo</b></h2>
+
+                    <form action="">
+                        <input type="hidden" value="" name="Id" Placeholder="Codigo" readonly>
+
+                        <select name="fabricante" required="required">
+							<option value="1" selected>AUDI</option>
+							<option value="2">CHEVROLET </option>
+							<option value="3">VOLKSWAGEN </option>
+							<option value="4">FIAT </option>
+							<option value="5">MERCEDES-BENZ </option>
+							<option value="6">CITROEN </option>
+							<option value="7">CHANA </option>
+							<option value="8">HONDA </option>
+							<option value="9">SUBARU </option>
+							<option value="10">FERRARI </option>
+							<option value="11">BUGATTI </option>
+							<option value="12">LAMBORGHINI </option>
+							<option value="13">FORD </option>
+							<option value="14">HYUNDAI </option>
+							<option value="15">PEUGEOT </option>
+							<option value="16">TOYOTA </option>
+							<option value="17">RENAULT </option>
+						</select>
+                        </select>
+                        <input type="text" name="modelo" value="" placeholder="Modelo Veículo" required="required" maxlength="11">
+                        <input type="text" name="anofab" value="" placeholder="Ano Fabricação" required="required" maxlength="4">
+                        <input type="text" name="anomod" value="" placeholder="Ano Modelo" required="required" maxlength="4">
+                        <input class="uppercase" type="text" name="placa" value="" placeholder="Placa-Cidade" maxlength="50">
+                        <input type="number" step=any name="valor" value="" placeholder="Valor R$" required="required">
+                        <input type="number" name="prop_id" value="" placeholder="Id Proprietario">
+
+
+                        <br>
+                        <button type="Submit">Cadastrar</button>
+
+                    </form>
+                </div>
+
+                <!-- End Content -->
+            </div>
+        </div>
+    </div>
+    <!--  	</div> -->
+    <th:block th:include="/_footer"></th:block>
+</body>
+
+</html>
