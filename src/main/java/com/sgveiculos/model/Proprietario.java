@@ -1,17 +1,35 @@
 package com.sgveiculos.model;
 
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 /**Project: sgveiculos
  * File: Proprietario.java
  * @author jaime
  * Em 15-05-2020 **/
 
-public class Proprietario {
+@Entity
+@Table(name="t_proprietario")
+public class Proprietario implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String email;
 	private String telefone;
 	private String cpf;
+	@OneToMany //(cascade=CascadeType.ALL,mappedBy = "prop")
+	private List<Veiculo> veiculos;
 
 	 /* Construct*/
 	public Proprietario() {}
@@ -75,10 +93,19 @@ public class Proprietario {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	/* Getter */
+	public List<Veiculo> getVeiculos() {
+		return veiculos;
+	}
+
+	/* Setter */
+	public void setVeiculos(List<Veiculo> veiculos) {
+		this.veiculos = veiculos;
+	}
 
 	@Override
 	public String toString() {
-		return "Proprietario id:" + id + "\n nome:" + nome + "\n email:" + email + "\n telefone:" + telefone
+		return "\n Prop id:" + id + "\n Nome:" + nome + "\n Email:" + email + "\n Telefone:" + telefone
 				+ "\n cpf:" + cpf;
 	}
 }

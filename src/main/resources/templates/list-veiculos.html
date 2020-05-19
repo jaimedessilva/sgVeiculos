@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proprietarios</title>
+    <title>Veiculos</title>
 </head>
 
 <body>
@@ -31,79 +31,31 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th style="width: 22%;">Fabricante</th>
-                            <th style="width: 22%;">Modelo</th>
-                            <th>Ano Mod</th>
+                            <th style="width: 10%;">Fabricante</th>
+                            <th style="width: 10%;">Modelo</th>
                             <th>Ano Fab</th>
+                            <th>Ano Mod</th>
                             <th>Placa</th>
                             <th>Valor</th>
+<!--                             <th>Proprietario</th> -->
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Thomas Hardy</td>
-                            <td>89 Chiaroscuro Rd.</td>
-                            <td>Portland</td>
-                            <td>97219</td>
-                            <td>97219</td>
-                            <td>USA</td>
-                            <td><a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
-										class="material-icons">&#xE254;</i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-										class="material-icons">&#xE872;</i></a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Maria Anders</td>
-                            <td>Obere Str. 57</td>
-                            <td>Berlin</td>
-                            <td>12209</td>
-                             <td>28023</td>
-                            <td>Germany</td>
-                            <td><a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
-										class="material-icons">&#xE254;</i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-										class="material-icons">&#xE872;</i></a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Fran Wilson</td>
-                            <td>C/ Araquil, 67</td>
-                            <td>Madrid</td>
-                            <td>28023</td>
-                             <td>28023</td>
-                            <td>Spain</td>
-                            <td><a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
-										class="material-icons">&#xE254;</i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-										class="material-icons">&#xE872;</i></a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Dominique Perrier</td>
-                            <td>25, rue Lauriston</td>
-                            <td>Paris</td>
-                            <td>75016</td>
-                             <td>28023</td>
-                            <td>France</td>
-                            <td><a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
-										class="material-icons">&#xE254;</i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-										class="material-icons">&#xE872;</i></a></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Martin Blank</td>
-                            <td>Via Monte Bianco 34</td>
-                            <td>Turin</td>
-                            <td>10100</td>
-                             <td>28023</td>
-                            <td>Italy</td>
-                            <td><a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
-										class="material-icons">&#xE254;</i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                        <tr th:each="veiculo : ${veiculos}">
+                            <td th:text="${veiculo.id}"></td>
+                            <td th:text="${veiculo.fabricante}"></td>
+                            <td th:text="${veiculo.modelo}"></td>
+                            <td th:text="${veiculo.anoFab}"></td>
+                            <td th:text="${veiculo.anoMod}"></td>
+                            <td th:text="${veiculo.placa}"></td>
+                            <td th:text="${veiculo.valor}"></td>
+<!--                             <td th:text="${veiculo.prop}"></td> -->
+                            <td><a th:href="@{/pagina/{id}(id=${veiculo.id})}" class="edit" title="Edit" data-toggle="tooltip">
+                            <i class="material-icons">&#xE254;</i></a>
+							
+                            
+                            <td><a th:href="@{/delete-veiculo/{id}(id=${veiculo.id})}" class="delete" title="Delete" data-toggle="tooltip"><i
 										class="material-icons">&#xE872;</i></a></td>
                         </tr>
                     </tbody>
@@ -129,7 +81,7 @@
             </div>
         </div>
     </div>
-    <th:block th:include="/_footer"></th:block>
+<!--     <th:block th:include="/_footer"></th:block> -->
 </body>
 
 </html>

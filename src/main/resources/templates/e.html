@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Veiculo</title>
+</head>
+
+<body>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- menu Include  -->
+    <th:block th:include="/_menu"></th:block>
+<!--     <div id="page-wrapper"> -->
+<!--         <div class="container-fluid"> -->
+<!--             <div class="row" id="main"> -->
+                <!--  				<div class="col-sm-12 col-md-12 well" id="content"> -->
+                <!-- Content -->
+
+                <div class="form-container">
+                    <h2>Atualizar <b>Veículo</b></h2>
+
+                    <form action="#" th:action="@{/update/{id}(id=${veiculo.id})}" th:object="${veiculo}" method="post">
+                        <input type="text" th:field="*{id}" name="id" Placeholder="Codigo" readonly>
+
+                        <select th:field="*{fabricante}" name="fabricante" required="required">
+							<option value="AUDI" selected>AUDI</option>
+							<option value="CHEVROLET">CHEVROLET </option>
+							<option value="VOLKSWAGEN">VOLKSWAGEN </option>
+							<option value="FIAT">FIAT </option>
+							<option value="MERCEDES-BENZ">MERCEDES-BENZ </option>
+							<option value="CITROEN">CITROEN </option>
+							<option value="CHANA">CHANA </option>
+							<option value="HONDA">HONDA </option>
+							<option value="SUBARU">SUBARU </option>
+							<option value="FERRARI">FERRARI </option>
+							<option value="BUGATTI">BUGATTI </option>
+							<option value="LAMBORGHINI">LAMBORGHINI </option>
+							<option value="FORD">FORD </option>
+							<option value="HYUNDAI">HYUNDAI </option>
+							<option value="PEUGEOT">PEUGEOT </option>
+							<option value="TOYOTA">TOYOTA </option>
+							<option value="RENAULT">RENAULT </option>
+						</select>
+                        
+<!--                         <input type="text" th:field="*{modelo}" name="modelo" placeholder="Modelo Veículo" required="required" maxlength="11"> -->
+<!--                         <input type="text" th:field="*{anoFab}" name="anoFab" placeholder="Ano Fabricação" required="required" maxlength="4"> -->
+<!--                         <input type="text" th:field="*{anoMod}" name="anoMod" placeholder="Ano Modelo" required="required" maxlength="4"> -->
+<!--                         <input type="text"  th:field="*{placa}" name="placa"required="required" placeholder="Placa-Cidade" maxlength="50"> -->
+<!--                         <input type="number" th:field="*{valor}" name="valor" step=any placeholder="Valor R$" required="required"> -->
+<!--                         <input type="number" name="prop_id" value="" placeholder="Id Proprietario"> -->
+
+
+                        <br>
+                        <button type="Submit">Atualizar</button>
+
+                    </form>
+                </div>
+
+                <!-- End Content -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
+    <!--  	</div> -->
+    <th:block th:include="/_footer"></th:block>
+</body>
+
+</html>

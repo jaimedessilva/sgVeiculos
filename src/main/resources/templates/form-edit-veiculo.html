@@ -17,9 +17,9 @@
                 <!-- Content -->
 
                 <div class="form-container">
-                    <h2>Cadastrar <b>Veículo</b></h2>
+                    <h2>Atualizar <b>Veículo</b></h2>
 
-                    <form action="#" th:action="@{/save-veiculo}" th:object="${veiculo}" method="post">
+                    <form action="#" th:action="@{/add-veiculo}" th:object="${veiculo}" method="post">
                         <input type="hidden" name="id" Placeholder="Codigo" readonly>
 
                         <select name="fabricante" required="required">

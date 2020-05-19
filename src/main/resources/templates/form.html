@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<style type="text/css">
+    /*Css*/
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+
+        height: 100%;
+        background-color: oldlace;
+        /*  background-image: url(images/internet.jpg); */
+    }
+
+    .content-all {
+        border: 1px solid green;
+        height: 100%;
+    }
+
+    .top-bar {
+        width: 100%;
+        position: fixed;
+        height: 60px;
+        border: 1px solid red;
+    }
+
+    .aside {
+        margin-top: 60px;
+        border: 1px solid gray;
+    }
+
+    .aleft {
+        float: left;
+        width: 15%;
+        height: 100%;
+    }
+
+    .aright {
+        float: right;
+        width: 5%;
+        border: 1px solid black; 
+    }
+    .content {
+        margin-top: 60px;
+        width: 84%;
+        overflow: hidden;
+        min-height: 500px;
+        border: 1px solid black;
+        background-color: cornflowerblue;
+    }
+    .content-center {
+        width: 98%;
+        padding: 5px;
+        min-height: 480px;
+        margin: 5px auto;
+        background: gray;
+    }
+</style>
+
+<body>
+    <div class="content-all">
+        <div class="top-bar">
+            Top Bar
+        </div>
+        
+        <div class="aside aleft">
+            aside
+        </div>
+        <div class="content">
+            <div class="content-center">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin augue erat, ullamcorper pulvinar
+                    malesuada ultricies, mollis non magna. Curabitur quis nisi ut ligula ultricies gravida. Suspendisse elit
+                    justo, vulputate in facilisis sed, tristique id nisi. Maecenas risus quam, suscipit eu vehicula ut,
+                    ultricies in neque. Donec gravida tristique turpis ut interdum. Donec lacinia nisi id enim lacinia sit
+                    amet facilisis est ullamcorper. Curabitur ipsum libero, sollicitudin nec rhoncus quis, congue non ipsum.
+                    Etiam at eros dolor. Mauris non erat vitae leo faucibus fermentum. In consectetur, diam eget faucibus
+                    dignissim, urna justo pretium dui, nec eleifend neque velit vitae odio. Nam et tristique turpis. In
+                    dictum commodo sem ut dignissim. In convallis quam non tortor posuere sed ornare nulla pulvinar.
+                    Suspendisse placerat turpis in tortor rutrum nec mollis nulla posuere. Integer tellus est, rhoncus ut
+                    sagittis eget, mattis a velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                    cubilia Curae; Quisque gravida posuere orci nec ornare. Donec elit nulla, aliquam eget cursus a, commodo
+                    sed odio.
+                </p>
+            </div>
+        </div>
+        
+        
+
+
+    </div>
+
+</body>
+
+</html>

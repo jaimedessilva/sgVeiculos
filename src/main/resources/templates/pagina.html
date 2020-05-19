@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--  <html xmlns:th="http://www.thymeleaf.org">-->
+
+<head>
+<title>Pagina Update</title>
+</head>
+<body>
+	<!-- menu Include  -->
+	<th:block th:include="/_header"></th:block>
+	<!-- Page-->
+	<div id="page-wrapper" style="margin-left:225px">
+		<div class="container-fluid">
+			<!-- Page Heading -->
+<!-- 			<div class="row" id="main"> -->
+				<!-- 					<div class="col-sm-12 col-md-12 well" id="content"> -->
+				<!-- Content -->
+
+				<div class="form-container">
+					<h2>
+						Atualizar <b>Veículo</b>
+					</h2>
+
+					<form action="#" th:action="@{/save-veiculo}"
+						th:object="${veiculo}" method="post">
+						<input type="text" th:field="*{id}" readonly> <select
+							name="fabricante" th:field="*{fabricante}" required="required">
+							<option value="AUDI" selected>AUDI</option>
+							<option value="CHEVROLET">CHEVROLET</option>
+							<option value="VOLKSWAGEN">VOLKSWAGEN</option>
+							<option value="FIAT">FIAT</option>
+							<option value="MERCEDES-BENZ">MERCEDES-BENZ</option>
+							<option value="CITROEN">CITROEN</option>
+							<option value="CHANA">CHANA</option>
+							<option value="HONDA">HONDA</option>
+							<option value="SUBARU">SUBARU</option>
+							<option value="FERRARI">FERRARI</option>
+							<option value="BUGATTI">BUGATTI</option>
+							<option value="LAMBORGHINI">LAMBORGHINI</option>
+							<option value="FORD">FORD</option>
+							<option value="HYUNDAI">HYUNDAI</option>
+							<option value="PEUGEOT">PEUGEOT</option>
+							<option value="TOYOTA">TOYOTA</option>
+							<option value="RENAULT">RENAULT</option>
+						</select> <input type="text" name="modelo" th:field="*{modelo}"
+							required="required" maxlength="11"> <input type="text"
+							name="anoFab" th:field="*{anoFab}" required="required"
+							maxlength="4"> <input type="text" name="anoMod"
+							th:field="*{anoMod}" required="required" maxlength="4"> <input
+							type="text" name="placa" th:field="*{placa}" maxlength="50">
+						<input type="number" name="valor" step=any th:field="*{valor}"
+							placeholder="Valor R$" required="required">
+						<!--                         <input type="number" name="prop_id" value="" placeholder="Id Proprietario"> -->
+
+
+						<br>
+						<button type="Submit" class="btn btn-success">Salvar</button>
+						<a th:href="@{/delete-veiculo/{id}(id=${veiculo.id})}"
+							class="btn btn-danger">Deletar</a>
+
+					</form>
+				</div>
+
+				<!--  					End Content -->
+
+<!-- 			</div> -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container-fluid -->
+	</div>
+	<!-- /#page-wrapper -->
+	</div>
+	<!-- /#wrapper -->
+
+</body>
+
+</html>
