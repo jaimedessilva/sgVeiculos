@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Usuario</title>
 </head>
 <body>
- <!-- menu Include  -->
- <th:block th:include="/_menu"></th:block>  
-    <div id="page-wrapper" >
- 		<div class="container-fluid">
- 			<div class="row" id="main"  >
-<!--  				<div class="col-sm-12 col-md-12 well" id="content"> -->
+   <!-- Admin Painel Include  -->
+	<th:block th:include="/_header"></th:block>
+    <div id="page-wrapper">
+ 		<div class="container-fluid" >
  					<!-- Content -->
  					
- 						 <div class="form-container">
+						 <div class="form-container">
 						        <h2>Cadastrar <b>Usuario</b></h2>
 						
 						        <form action="">
@@ -27,14 +25,12 @@
 											<option value="1" selected>Ativo</option>
 						      		</select>
 						            <br>
-						            <button type="Submit">Cadastrar</button>
+						            <button type="Submit" class="btn btn-success">Cadastrar</button>
 						        </form>
  					</div>
+ 					
  					<!-- End Content -->
  				</div>
-<!--  			</div> -->
- 		</div>
- 	</div>
- 	<th:block th:include="/_footer"></th:block>	
-</body>
+ 			</div>
+	</body>
 </html>

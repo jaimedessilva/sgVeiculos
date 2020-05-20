@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualizar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalhes Veiculo</title>
 </head>
 <body>
- <!-- menu Include  -->
- <th:block th:include="/_menu"></th:block>  
-    <div id="page-wrapper">
- 		<div class="container-fluid" >
- 			<div class="row" id="main" >
- 				<div class="col-sm-12 col-md-12 well" id="content">
- 					<!-- Content -->
- 					
-					
- 					
-<!--  					End Content -->
- 				</div>
- 			</div>
-		 </div> 
- 	</div>
- 	 <th:block th:include="/_footer"></th:block>
+	<!-- Admin Painel Include  -->
+	<th:block th:include="/_header"></th:block>
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<!-- Content -->
+			<h3>
+				Detalhes do <b>Veículo</b>
+			</h3>
+
+			<div class="form-container">
+				<span th:object="${veiculo}"></span>
+
+				<table class="table table-striped">
+					<tr>
+						<td>Id</td>
+						<td><p value="Nome" th:text="${veiculo.id}"></p></td>
+					</tr>
+					<tr>
+						<td>Marca/Modelo</td>
+						<td><p th:text="${veiculo.fabricante}">
+							<p th:text="${veiculo.modelo}"></p></td>
+					</tr>
+					<tr>
+						<td>Ano</td>
+						<td><p th:text="${veiculo.anoFab}">/
+							<p th:text="${veiculo.anoMod}"></p></td>
+					</tr>
+					<tr>
+						<td>Placa</td>
+						<td><p th:text="${veiculo.placa}"></td>
+					</tr>
+					<tr>
+						<td>Valor</td>
+						<td><p th:text="${veiculo.valor}"></td>
+					</tr>
+					<tr>
+						<td>Proprietário</td>
+						<td><p th:text="${veiculo.prop.nome}"></p></td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td><p th:text="${veiculo.prop.email}"></p></td>
+					</tr>
+					<tr>
+						<td>Telefone</td>
+						<td><p th:text="${veiculo.prop.telefone}"></td>
+					</tr>
+				</table>
+
+				<!-- End Content -->
+			</div>
+		</div>
 </body>
 </html>

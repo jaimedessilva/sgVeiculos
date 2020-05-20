@@ -1,33 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veiculos</title>
 </head>
-
 <body>
-    <!-- menu Include  -->
-    <th:block th:include="/_menu"></th:block>
-
+   <!-- Admin Painel Include  -->
+	<th:block th:include="/_header"></th:block>
     <div id="page-wrapper">
-        <div class="container-fluid">
-            <div class="row" id="main" style="padding: 4px">
-                <!-- 				<div class="col-sm-12 col-md-12 well" id="content"> -->
-                <!-- Content -->
-
-                <div class="table-title" style="width: 90%">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h2>
-                                Veículos <b>Detalhes</b>
-                            </h2>
-                        </div>
-
-                    </div>
-                </div>
-                <table class="table table-striped">
+ 		<div class="container-fluid" >
+ 					<!-- Content -->
+ 			<h2>Lista de <b>Veículos</b></h2>
+ 			<p></p>
+			<table class="table table-striped">
+			
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -38,50 +25,64 @@
                             <th>Placa</th>
                             <th>Valor</th>
 <!--                             <th>Proprietario</th> -->
-                            <th>Ações</th>
+                            <th>Editar</th>
+                            <th>Excluir</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="veiculo : ${veiculos}">
+                        <tr th:each="veiculo : ${page.content}">
                             <td th:text="${veiculo.id}"></td>
                             <td th:text="${veiculo.fabricante}"></td>
-                            <td th:text="${veiculo.modelo}"></td>
+                            <td><b>
+                            	<a th:href="@{/detalhes-veiculo/{id}(id=${veiculo.id})}"><span th:text="${veiculo.modelo}"></span></a></b>
+                            </td>
                             <td th:text="${veiculo.anoFab}"></td>
                             <td th:text="${veiculo.anoMod}"></td>
                             <td th:text="${veiculo.placa}"></td>
                             <td th:text="${veiculo.valor}"></td>
+                        
 <!--                             <td th:text="${veiculo.prop}"></td> -->
                             <td><a th:href="@{/pagina/{id}(id=${veiculo.id})}" class="edit" title="Edit" data-toggle="tooltip">
-                            <i class="material-icons">&#xE254;</i></a>
+                            <i style="font-size:24px" class="fa">&#xf044;</i></a>
 							
+                            <td><a th:href="@{/delete-veiculo/{id}(id=${veiculo.id})}" class="delete" title="Delete" data-toggle="tooltip">
+                            <i style="font-size:24px" class="glyphicon">&#xe020;</i>
                             
-                            <td><a th:href="@{/delete-veiculo/{id}(id=${veiculo.id})}" class="delete" title="Delete" data-toggle="tooltip"><i
-										class="material-icons">&#xE872;</i></a></td>
+                            
+
+<!-- <i class="fas fa-trash-alt"></i> -->
                         </tr>
                     </tbody>
                 </table>
                 <!-- Paginação -->
                 <div class="clearfix">
                     <div class="hint-text">
-                        Showing <b>5</b> out of <b>25</b> entries
+                        Showing entries
                     </div>
                     <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                        <!-- Paginação -->
+                        <li class="page-item disabled">
+					
+<!-- 						<span th:if="${page.hasPrevious()}" class="page-link"> -->
+<!-- 							<a	class="page-link" href="#" tabindex="-1">Previous</a></li> -->
+							<li class="page-item">
+								<a th:href="@{/list-veiculos(page=${page.number-1},size=${page.size},sort=${sortParam})}">Voltar</a></li>
+							</span>
+						<li><th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+						<span th:if="${page.number == i}" class="page-item active">[[${i}+1]]</span>
+						<span th:unless="${page.number == i}"> <a class="page-link"
+							th:href="@{/list-veiculos(page=${i},size=${page.size},sort=${sortParam})}">[[${i}+1]]</a>
+						</span>
+
+					</th:block> <span th:if="${page.hasNext()}"><a
+						th:href="@{/list-veiculos(page=${page.number+1},size=${page.size},sort=${sortParam})}">Next</a>
+				</span>
+                    
                     </ul>
-                </div>
-                <!-- 				</div> -->
-
-                <!-- End Content -->
-            </div>
-        </div>
-    </div>
-<!--     <th:block th:include="/_footer"></th:block> -->
-</body>
-
+                </div>	 
+ 					
+ 					<!-- End Content -->
+ 				</div>
+ 			</div>
+	</body>
 </html>

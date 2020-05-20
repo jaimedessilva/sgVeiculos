@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,7 +30,7 @@ import com.sgveiculos.repository.VeiculoRepository;
  * Em 17-05-2020 **/
 
 @RestController
-@RequestMapping(value="/api/carros")
+@RequestMapping(value="/api/veiculos")
 public class VeiculoRestController {
 
 	@Autowired
@@ -51,7 +52,7 @@ public class VeiculoRestController {
 	}
 
 	// GET VEICULOS
-	@RequestMapping
+	@RequestMapping("/v")
 	public List<?> getAll() {
 		return (List<?>) veiculos.findAll();
 	}
