@@ -71,30 +71,30 @@ public class VeiculoController {
 	// User
 	@GetMapping("/user")
 	public String user() {
-		return "/user";
+		return "user";
 	}
 
 	@GetMapping("/header")
 	public String header() {
-		return "/_header";
+		return "_header";
 	}
 
 	// Form Veículo
 	@GetMapping("/form-veiculo")
 	public String formVeiculo(Veiculo veiculo) {
-		return "/form-cad-veiculo";
+		return "form-cad-veiculo";
 	}
 
 	// Form Proprietario
 	@GetMapping("/form-proprietario")
 	public String formProp() {
-		return "/form-cad-properietario";
+		return "form-cad-properietario";
 	}
 
 	// Form Usuario
 	@GetMapping("/form-usuario")
 	public String cadUsuario() {
-		return "/form-cad-usuario";
+		return "form-cad-usuario";
 	}
 
 	// Form Edit - Id
@@ -113,13 +113,13 @@ public class VeiculoController {
 				.orElseThrow(() -> new IllegalArgumentException("Invalid Id:" + id));
 
 		model.addAttribute("proprietario", p);
-		return "/form-edit-prop";
+		return "form-edit-prop";
 	}
 
 	// Form Teste
 	@GetMapping("/pagina")
 	public String showUpdate2(Veiculo v) {
-		return "/pagina";
+		return "pagina";
 	}
 
 	// Detalhes
@@ -128,7 +128,7 @@ public class VeiculoController {
 		Veiculo v = veiculos.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 
 		model.addAttribute("veiculo", v);
-		return "/detalhes-veiculo";
+		return "detalhes-veiculo";
 	}	
 /*
  * ********************************************
@@ -156,7 +156,7 @@ public class VeiculoController {
 			model.addAttribute("sortDesc", order.getDirection() == Sort.Direction.DESC);
 		}
 		model.addAttribute("page", page );
-		return "/list-veiculos";
+		return "list-veiculos";
 	}
 
 	// Lista Proprietarios
@@ -164,7 +164,7 @@ public class VeiculoController {
 	public String getProprietarios(Model model) {
 		List<Proprietario> proprietarios = repository.findAll();
 		model.addAttribute("proprietarios", proprietarios);
-		return "/list-proprietarios";
+		return "list-proprietarios";
 	}
 	//Busca por Nome
 //	@GetMapping({"/busca","/busca{nome}"})
