@@ -67,7 +67,10 @@ public class VeiculoController {
 //	public String user() {
 //		return "/user";
 //	}
-
+	@RequestMapping(path="{/logado}")
+	public String user1() {
+		return "user";
+	}
 	// User
 	@GetMapping("/user")
 	public String user() {
