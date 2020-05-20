@@ -49,14 +49,18 @@ public class VeiculoController {
  * ************************************||
  */
 	// Login
-	@GetMapping("/")
-	public String login() {
-		return "/login";
+//	@GetMapping("/")
+//	public String login() {
+//		return "/login";
+//	}
+	@RequestMapping(path= {"/"})
+	public String login () {
+		return "login";
 	}
-	@GetMapping("/login")
-	public String login1 () {
-		return "/login";
-	}
+//	@GetMapping("/login")
+//	public String login1 () {
+//		return "/login";
+//	}
 
 //	// Home
 //	@GetMapping("/user")

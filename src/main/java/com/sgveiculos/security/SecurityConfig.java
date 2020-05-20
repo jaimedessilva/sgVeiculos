@@ -39,14 +39,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 			http.csrf().disable();
 			
 			//The pages not require Login
-	        http.authorizeRequests().antMatchers("/","/login**","/api/veiculos/v","/api/veiculos/p").permitAll();
+	        http.authorizeRequests().antMatchers("/","/login","/api/veiculos/v","/api/veiculos/p").permitAll();
 	        //The Pages Require Login
 	        http.authorizeRequests().antMatchers("/home/**").hasAnyRole("ADMIN")
 	                                .antMatchers("/user").hasAnyRole("USER","ADMIN")
 	                                .anyRequest().authenticated();
 	        //Config Form Login
 	        http.authorizeRequests().and().formLogin()
-	        .loginPage("/login") //Formulario de Login Personalizado
+	        .loginPage("/") //Formulario de Login Personalizado
 	        .loginProcessingUrl("/login")
 	        .defaultSuccessUrl("/user",true)
 	        .failureUrl("/login?error=true")
