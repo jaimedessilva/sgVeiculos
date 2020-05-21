@@ -3,7 +3,7 @@
             Sobre o Sistema
 </h1>
 <h2>SG-Veiculos</h2>
-<h4>style="font-size: 16px; text-align: center">Projeto que simula um sistema de Gestão de Veículos e
+<h4>Projeto que simula um sistema de Gestão de Veículos e
 Proprietarios com operações de Busca, Cadastro Atualização e Exclusão de Dados.<br> 
 Tambem disponibilizo uma Api Rest para consumo, link no próprio Sistema</h4>
 			

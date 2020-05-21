@@ -1,8 +1,5 @@
 package com.sgveiculos.security;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 
 /**Project: sgveiculos
  * File: SecurityConfig.java

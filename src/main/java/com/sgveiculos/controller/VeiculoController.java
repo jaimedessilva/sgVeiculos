@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.sgveiculos.model.Proprietario;
@@ -21,6 +22,7 @@ import com.sgveiculos.model.Veiculo;
 import com.sgveiculos.repository.ProprietarioRepository;
 import com.sgveiculos.repository.VeiculoRepository;
 import com.sgveiculos.repository.VeiculosPgRepository;
+
 
 /**Project: sgveiculos
  * File: VeiculoController.java
@@ -49,23 +51,27 @@ public class VeiculoController {
  * ************************************||
  */
 	//Login
-	@RequestMapping("/")
+	@RequestMapping(value = "/", method=RequestMethod.GET)
 	public String login () {
 		return "login";
 	}
 	//Login
-	@GetMapping("/login")
+	@RequestMapping(value = "/login", method=RequestMethod.GET)
 	public String login1 () {
 		return "login";
 	}
 	// User
-	@GetMapping("user")
+	@RequestMapping(value = "/user", method=RequestMethod.GET)
 	public String user() {
 		return "user";
 	}
-	@GetMapping("info")
+	@RequestMapping(value = "/info", method=RequestMethod.GET)
 	public String info() {
 		return "info";
+	}
+	@GetMapping("/hello")
+	public String hello () {
+		return "hello";
 	}
 	//Header
 //	@GetMapping("/header")

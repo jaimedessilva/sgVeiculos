@@ -4,15 +4,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication (exclude = {SecurityAutoConfiguration.class })
-@EntityScan("com.*")
-//@ComponentScan (basePackages = {"com.sgveiculos.controller","com.sgveiculos.model","com.sgveiculos.repository","com.sgveiculos.gestao"})
-//@ComponentScan (basePackages = {"com.sgveiculos.*"})
-@ComponentScan ({"com.sgveiculos.controller"})
+@SpringBootApplication
+@ComponentScan (basePackages = {"com.sgveiculos.controller"})
+//@EntityScan("com.*")
 @EnableAutoConfiguration
 public class SgveiculosApplication implements CommandLineRunner {
 	
