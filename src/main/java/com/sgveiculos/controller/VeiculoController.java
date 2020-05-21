@@ -59,11 +59,11 @@ public class VeiculoController {
 		return "login";
 	}
 	// User
-	@GetMapping("/user")
+	@GetMapping("user")
 	public String user() {
 		return "user";
 	}
-	@GetMapping("/info")
+	@GetMapping("info")
 	public String info() {
 		return "info";
 	}
