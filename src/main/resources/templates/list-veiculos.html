@@ -7,7 +7,7 @@
 </head>
 <body>
    <!-- Admin Painel Include  -->
-	<th:block th:include="/_header"></th:block>
+	<th:block th:include="@{/_header}"></th:block>
     <div id="page-wrapper">
  		<div class="container-fluid" >
  					<!-- Content -->
@@ -18,13 +18,13 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th style="width: 10%;">Fabricante</th>
-                            <th style="width: 10%;">Modelo</th>
+                            <th>Fabricante</th>
+                            <th>Modelo</th>
                             <th>Ano Fab</th>
                             <th>Ano Mod</th>
                             <th>Placa</th>
                             <th>Valor</th>
-<!--                             <th>Proprietario</th> -->
+<!--                        <th>Proprietario</th> -->
                             <th>Editar</th>
                             <th>Excluir</th>
                         </tr>
@@ -34,7 +34,8 @@
                             <td th:text="${veiculo.id}"></td>
                             <td th:text="${veiculo.fabricante}"></td>
                             <td><b>
-                            	<a th:href="@{/detalhes-veiculo/{id}(id=${veiculo.id})}"><span th:text="${veiculo.modelo}"></span></a></b>
+                            	<a th:href="@{/detalhes-veiculo/{id}(id=${veiculo.id})}">
+                            	<span th:text="${veiculo.modelo}"></span></a></b>
                             </td>
                             <td th:text="${veiculo.anoFab}"></td>
                             <td th:text="${veiculo.anoMod}"></td>

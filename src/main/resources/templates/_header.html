@@ -7,112 +7,111 @@
 <title>Painel-Admin SSJ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
-<style type="text/css">
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+<style th:inline="text">
+@import
+	url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+	;
+/*CSS Menu e Painel Admin*/
 @media ( min-width :768px) {
 	body {
 		background-image: url(../images/internet.jpg);
-        font-family: Arial, Helvetica, sans-serif;
-        font-family: 'Raleway', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+		font-family: Arial, Helvetica, sans-serif;
+		font-family: 'Raleway', sans-serif;
+		-webkit-font-smoothing: antialiased;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 	}
 
 	/*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
 }
 
 #wrapper {
-/*     border:1px solid red; */
+	/*     border:1px solid red; */
 	padding-left: 0;
-/* 	min-height: 650px; */
+	/* 	min-height: 650px; */
 }
 
-#page-wrapper {	
-	padding: 0;	
+#page-wrapper {
+	padding: 0;
 }
 
 .navbar-collapse {
-    border-top: 1px solid transparent;
-    width: 50%;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	border-top: 1px solid transparent;
+	width: 50%;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
+
 #main {
-    margin-top: 10px;
-    padding: 2px;
+	margin-top: 10px;
+	padding: 2px;
 	min-height: 600px;
 	max-height: 100%;
 	margin-left: 225px;
 	border: 1px solid green;
-	
 }
+
 .container-fluid {
 	margin-top: 60px;
 	margin-left: 225px;
 	background: white;
 	min-height: 550px;
-/*  	border: 2px solid black;  */
+	/*  	border: 2px solid black;  */
 }
 /*
 	MOBILE
 */
-@media (max-width:768px) {
-    body {
-		
-        font-family: Arial, Helvetica, sans-serif;
-        font-family: 'Raleway', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+@media ( max-width :768px) {
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		font-family: 'Raleway', sans-serif;
+		-webkit-font-smoothing: antialiased;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 	}
-    #wrapper {
-    	width: 100%;
-    	background: none;
-    	margin-left: -225px;
-    }
-    #page-wrapper {
-    	margin-top: 110px;
-        width: 100%;
-        padding: 22xp 10px;
-/*          border: 1px solid green;      */
-    }
-    .row {
-/*         border: 1px solid green;  */
-        background: #F2F1F1;
-           
-    }
-    .container-fluid {
-        width: 100%;
-    	background: #F2F1F1;
-/*     	border: 1px solid red; */
-    	margin-left: 0;
-    }
-    .form-container {
-        margin: 5px auto;
-        padding: 5px;
-/*     	border: 1px solid red; */
-        width: 100%;
-        
-    }
-    .form-container input {
-        width: 100%;
-    }
-    .footer {
-        display: none;
-    }
+	#wrapper {
+		width: 100%;
+		background: none;
+		margin-left: -225px;
+	}
+	#page-wrapper {
+		margin-top: 110px;
+		width: 100%;
+		padding: 22xp 10px;
+		/*          border: 1px solid green;      */
+	}
+	.row {
+		/*         border: 1px solid green;  */
+		background: #F2F1F1;
+	}
+	.container-fluid {
+		width: 100%;
+		background: #F2F1F1;
+		/*     	border: 1px solid red; */
+		margin-left: 0;
+	}
+	.form-container {
+		margin: 5px auto;
+		padding: 5px;
+		/*     	border: 1px solid red; */
+		width: 100%;
+	}
+	.form-container input {
+		width: 100%;
+	}
+	.footer {
+		display: none;
+	}
 }
 
 .col-sm-12 col-md-12 well {
-    height: 50px;
+	height: 50px;
 }
-
 
 /* Top Navigation */
-
 .navbar {
-    background-color: black;
-    opacity: 0.8;
+	background-color: black;
+	opacity: 0.8;
 }
+
 .top-nav {
 	padding: 0 15px;
 }
@@ -224,8 +223,7 @@
 *
 **************************************/
 .form-container {
-  	
- 	background: #F2F1F1; 
+	background: #F2F1F1;
 	padding: 10px;
 	width: 90%;
 }
@@ -254,25 +252,26 @@ select {
 .uppercase {
 	text-transform: uppercase;
 }
+
 .btn {
-    margin-top: 5px;
+	margin-top: 5px;
 	width: 100px;
 	height: 45px;
 	padding: 10px;
 	font-weight: bold;
 }
+
 .input-group-addon {
 	background: white;
-	
 }
+
 .form-control {
 	height: 35px;
 }
-
+/*End CSS*/
 </style>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -285,31 +284,34 @@ select {
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/user">
-					SSJ-Admin </a>
+				<a class="navbar-brand" href="/user"> SSJ-Admin </a>
 			</div>
+			
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
 				<li><a href="#" data-placement="bottom" data-toggle="tooltip"
 					data-original-title="Stats"><i class="fa fa-bar-chart-o"></i> </a>
 				</li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">[[${#httpServletRequest.remoteUser}]]<b class="fa fa-angle-down"></b></a>
+					data-toggle="dropdown"><i class="fa fa-circle-o-notch" aria-hidden="true"></i>  
+					[[${#httpServletRequest.remoteUser}]]<b class="fa fa-angle-down"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#"><i class="fa fa-fw fa-user"></i> Edit
-								Profile</a></li>
-						<li><a href="#"><i class="fa fa-fw fa-cog"></i> Change
-								Password</a></li>
+						<li><a href="#"><i class="fa fa-fw fa-user"></i> 
+								Edit Profile</a></li>
+						<li><a href="#"><i class="fa fa-fw fa-cog"></i> 
+								Change Password</a></li>
 						<li class="divider"></li>
-						<li><a href="/logout"><i class="fa fa-fw fa-power-off"></i>
+						<li><a href="logout"><i class="fa fa-fw fa-power-off"></i>
 								Logout</a></li>
 					</ul></li>
 			</ul>
-			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+			
+			<!-- Sidebar Menu Items - Responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 
@@ -317,8 +319,8 @@ select {
                     <a href="#" data-toggle="collapse" data-target="#submenu-1">
                         <i class="fa fa-fw fa-user-plus"></i> Administrar <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-1" class="collapse">
-                        <li><a href="/form-veiculo"><i class="fa fa-fw fa-user-plus"></i> Cadastrar Veículo</a></li>
-                        <li><a href="/form-proprietario"><i class="fa fa-fw fa-user-plus"></i> Cadastrar Proprietario</a></li>
+                        <li><a th:href="@{/form-veiculo}"><i class="fa fa-fw fa-user-plus"></i> Cadastrar Veículo</a></li>
+                        <li><a th:href="@{/form-proprietario}"><i class="fa fa-fw fa-user-plus"></i> Cadastrar Proprietario</a></li>
                         <li><a href="#"><i class="fa fa-fw fa-user-plus"></i> Criar Usuario</a></li>
                     </ul>
                 </li>
@@ -327,41 +329,37 @@ select {
                     <a href="#" data-toggle="collapse" data-target="#submenu-2">
                         <i class="fa fa-fw fa-table"></i> Listas <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-2" class="collapse">
-                        <li><a href="/list-veiculos"><i class="fa fa-fw fa-table"></i>Veículos</a></li>
-                        <li><a href="/proprietarios"><i class="fa fa-fw fa-table"></i>Proprietarios</a></li>
+                        <li><a th:href="@{/list-veiculos}"><i class="fa fa-fw fa-table"></i> Veículos</a></li>
+                        <li><a th:href="@{/proprietarios}"><i class="fa fa-fw fa-table"></i> Proprietarios</a></li>
                         <li><a href="#"><i class="fa fa-fw fa-table"></i>Usuarios</a></li>
                         
                     </ul>
                 </li>
 
                 <li>
-                    <a href="/home"><i class="fa fa-area-chart" aria-hidden="true"></i> Dashboards </a>
+                    <a href="/user"><i class="fa fa-area-chart" aria-hidden="true"></i> Dashboards </a>
 
                 </li>
 
-                <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-3">
-                        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Menu <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                    <ul id="submenu-3" class="collapse">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i>
-								SUBMENU 2.1</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i>
-								SUBMENU 2.2</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i>
-								SUBMENU 2.3</a></li>
-                    </ul>
-                </li>
+<!--                 <li> -->
+<!--                     <a href="#" data-toggle="collapse" data-target="#submenu-3"> -->
+<!--                         <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Menu <i class="fa fa-fw fa-angle-down pull-right"></i></a> -->
+<!--                     <ul id="submenu-3" class="collapse"> -->
+<!--                         <li><a href="#"><i class="fa fa-angle-double-right"></i> -->
+<!-- 								SUBMENU 2.1</a></li> -->
+<!--                         <li><a href="#"><i class="fa fa-angle-double-right"></i> -->
+<!-- 								SUBMENU 2.2</a></li> -->
+<!--                         <li><a href="#"><i class="fa fa-angle-double-right"></i> -->
+<!-- 								SUBMENU 2.3</a></li> -->
+<!--                     </ul> -->
+<!--                 </li> -->
 
                 <li>
-                    <a href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> Configurações</a>
-                </li>
-
-                <li>
-                    <a href="/api/veiculos/v">
+                    <a th:href="@{/api/veiculos/v}">
                         <i class="fa fa-file-code-o" aria-hidden="true"></i> Api Veículos</a>
                 </li>
                 <li>
-                    <a href="/api/veiculos/p">
+                    <a th:href="@{/api/veiculos/p}">
                         <i class="fa fa-file-code-o" aria-hidden="true"></i> Api Proprietarios</a>
                 </li>
 
@@ -372,6 +370,10 @@ select {
                 <li>
                     <a href="https://www.linkedin.com/in/jaimedessilva/">
                         <i class="fa fa-linkedin-square" aria-hidden="true"></i> Linkedin</a>
+                </li>
+                <li>
+<!--                     <a href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> Configurações</a> -->
+                    <a th:href="@{/info}" ><i class="fa fa-info-circle" aria-hidden="true"></i> Info</a>
                 </li>
             </ul>
         </div>

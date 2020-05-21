@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usuario</title>
 </head>
 <body>
-   <!-- Admin Painel Include  -->
-	<th:block th:include="/_header"></th:block>
-    <div id="page-wrapper">
- 		<div class="container-fluid" >
- 					<!-- Content -->
- 					
-						 <h4>Bem Vindo <b>[[${#httpServletRequest.remoteUser}]]</b>, você está logado!!!</h4>
- 					
- 					<!-- End Content -->
- 				</div>
- 			</div>
-	</body>
+	<!-- Admin Painel Include  -->
+	<th:block th:include="@{/_header}"></th:block>
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<!-- Content -->
+
+			<h4>
+				Bem Vindo <b>[[${#httpServletRequest.remoteUser}]]</b>, você está
+				logado!!!
+			</h4>
+			<!-- End Content -->
+		</div>
+	</div>
+</body>
 </html>

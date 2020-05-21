@@ -1,29 +1,25 @@
 package com.sgveiculos;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.sgveiculos.model.Proprietario;
-import com.sgveiculos.model.Veiculo;
-import com.sgveiculos.repository.ProprietarioRepository;
-import com.sgveiculos.repository.VeiculoRepository;
-
-@SpringBootApplication
+@SpringBootApplication (exclude = {SecurityAutoConfiguration.class })
 @EntityScan("com.*")
 //@ComponentScan (basePackages = {"com.sgveiculos.controller","com.sgveiculos.model","com.sgveiculos.repository","com.sgveiculos.gestao"})
-@ComponentScan (basePackages = {"com.sgveiculos.*"})
+//@ComponentScan (basePackages = {"com.sgveiculos.*"})
+@ComponentScan ({"com.sgveiculos.controller"})
 @EnableAutoConfiguration
 public class SgveiculosApplication implements CommandLineRunner {
 	
-	@Autowired
-	private VeiculoRepository vr;
-	@Autowired
-	private ProprietarioRepository pRep;
+//	@Autowired
+//	private VeiculoRepository vr;
+//	@Autowired
+//	private ProprietarioRepository pRep;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SgveiculosApplication.class, args);
@@ -37,7 +33,6 @@ public class SgveiculosApplication implements CommandLineRunner {
 //		
 //		pRep.save(p);
 //		vr.save(v);
-		
-		
+			
 	}
 }

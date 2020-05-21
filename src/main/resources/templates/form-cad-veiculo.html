@@ -15,7 +15,7 @@
 						  <div class="form-container">
                     <h2>Cadastrar <b>Veículo</b></h2>
 
-                    <form action="#" th:action="@{/save-veiculo}" th:object="${veiculo}" method="post">
+                    <form th:action="@{/save-veiculo}" th:object="${veiculo}" method="post">
                         <input type="hidden" name="id" Placeholder="Codigo" readonly>
 
                         <select name="fabricante" required="required">
@@ -51,8 +51,7 @@
                         <button type="Submit" class="btn btn-success">Cadastrar</button>
 
                     </form>
-                </div>
- 					
+                </div>	
  					<!-- End Content -->
  				</div>
  			</div>

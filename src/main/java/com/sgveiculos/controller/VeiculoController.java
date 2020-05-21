@@ -48,54 +48,45 @@ public class VeiculoController {
  *  
  * ************************************||
  */
-	// Login
-//	@GetMapping("/")
-//	public String login() {
-//		return "/login";
-//	}
-	@RequestMapping(path= {"/"})
+	//Login
+	@RequestMapping("/")
 	public String login () {
 		return "login";
 	}
-//	@GetMapping("/login")
-//	public String login1 () {
-//		return "/login";
-//	}
-
-//	// Home
-//	@GetMapping("/user")
-//	public String user() {
-//		return "/user";
-//	}
+	//Login
+	@GetMapping("/login")
+	public String login1 () {
+		return "login";
+	}
 	// User
 	@GetMapping("/user")
 	public String user() {
 		return "user";
 	}
-
-	@GetMapping("/header")
-	public String header() {
-		return "_header";
+	@GetMapping("/info")
+	public String info() {
+		return "info";
 	}
-
+	//Header
+//	@GetMapping("/header")
+//	public String header() {
+//		return "_header";
+//	}
 	// Form Veículo
 	@GetMapping("/form-veiculo")
 	public String formVeiculo(Veiculo veiculo) {
 		return "form-cad-veiculo";
 	}
-
 	// Form Proprietario
 	@GetMapping("/form-proprietario")
 	public String formProp() {
 		return "form-cad-properietario";
 	}
-
 	// Form Usuario
 	@GetMapping("/form-usuario")
 	public String cadUsuario() {
 		return "form-cad-usuario";
 	}
-
 	// Form Edit - Id
 	@GetMapping("/pagina/{id}")
 	public String showUpdateForm(@PathVariable("id") long id, Model model) {
@@ -114,13 +105,6 @@ public class VeiculoController {
 		model.addAttribute("proprietario", p);
 		return "form-edit-prop";
 	}
-
-	// Form Teste
-	@GetMapping("/pagina")
-	public String showUpdate2(Veiculo v) {
-		return "pagina";
-	}
-
 	// Detalhes
 	@GetMapping("/detalhes-veiculo/{id}")
 	public String showVeiculo(@PathVariable("id") long id, Model model) {
@@ -135,8 +119,7 @@ public class VeiculoController {
  *  Create Read Update Delete
  *  
  * ********************************************
- */
-	
+ */	
 	// Lista Veiculos ñ paginada
 //	@GetMapping("/veiculos")
 //	public String getAllVeiculos(Model model) {
@@ -157,7 +140,6 @@ public class VeiculoController {
 		model.addAttribute("page", page );
 		return "list-veiculos";
 	}
-
 	// Lista Proprietarios
 	@GetMapping("/proprietarios")
 	public String getProprietarios(Model model) {
@@ -165,13 +147,6 @@ public class VeiculoController {
 		model.addAttribute("proprietarios", proprietarios);
 		return "list-proprietarios";
 	}
-	//Busca por Nome
-//	@GetMapping({"/busca","/busca{nome}"})
-//	public String getNome(@RequestParam("nome") String nome, Model model) {
-//		List<Proprietario> proprietarios = repository.findByNome(nome);
-//		model.addAttribute("proprietarios", proprietarios);
-//		return "/list-proprietarios";
-//	}
 	@PostMapping("/buscar")
 	public ModelAndView buscar (@RequestParam("nome") String nome) {
 		ModelAndView model = new ModelAndView("/list-proprietarios");
