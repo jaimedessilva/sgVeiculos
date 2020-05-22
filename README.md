@@ -2,7 +2,6 @@
 <h1>
             Sobre o Sistema
 </h1>
-<h2>SG-Veiculos</h2>
 <h3><a href="https://app-sgveiculos.herokuapp.com/">Link App-sgveiculos</a></h3>
 <h4>Projeto que simula um sistema de Gestão de Veículos e
 Proprietarios com operações de Busca, Cadastro Atualização e Exclusão de Dados.<br> 
