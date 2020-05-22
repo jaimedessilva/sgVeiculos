@@ -145,7 +145,7 @@ public class VeiculoController {
 	}
 	@PostMapping("/buscar")
 	public ModelAndView buscar (@RequestParam("nome") String nome) {
-		ModelAndView model = new ModelAndView("/list-proprietarios");
+		ModelAndView model = new ModelAndView("list-proprietarios");
 		model.addObject("proprietarios",repository.findByNome(nome));
 		model.addObject("proprietarioobj", new Proprietario());
 		return model;
