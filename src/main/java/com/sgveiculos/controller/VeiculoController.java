@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.sgveiculos.model.Proprietario;
@@ -50,34 +49,25 @@ public class VeiculoController {
  *  
  * ************************************||
  */
-	//Login
-	@RequestMapping(value = "/", method=RequestMethod.GET)
-	public String login () {
-		return "login";
-	}
-	//Login
-	@RequestMapping(value = "/login", method=RequestMethod.GET)
+	//User
+	@GetMapping("/")
 	public String login1 () {
-		return "login";
+		return "user";
 	}
 	// User
-	@RequestMapping(value = "/user", method=RequestMethod.GET)
+	@GetMapping("/user")
 	public String user() {
 		return "user";
 	}
-	@RequestMapping(value = "/info", method=RequestMethod.GET)
+	@GetMapping("/info")
 	public String info() {
 		return "info";
 	}
-	@GetMapping("/hello")
-	public String hello () {
-		return "hello";
+	//Login
+	@GetMapping("/login")
+	public String login () {
+		return "login";
 	}
-	//Header
-//	@GetMapping("/header")
-//	public String header() {
-//		return "_header";
-//	}
 	// Form Veículo
 	@GetMapping("/form-veiculo")
 	public String formVeiculo(Veiculo veiculo) {
