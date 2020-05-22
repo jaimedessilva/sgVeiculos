@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +30,7 @@ public class Veiculo implements Serializable {
 	private int anoFab;
 	private double valor;
 	private String placa;
-	@ManyToOne (optional = true)
+	@ManyToOne (optional = true, cascade = CascadeType.MERGE)
 	@JoinColumn(name="id_prop") //id do Proprietario
 	private Proprietario prop;
 	
