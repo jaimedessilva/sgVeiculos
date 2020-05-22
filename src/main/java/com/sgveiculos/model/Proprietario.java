@@ -28,7 +28,7 @@ public class Proprietario implements Serializable {
 	private String email;
 	private String telefone;
 	private String cpf;
-	@OneToMany //(cascade=CascadeType.ALL,mappedBy = "prop")
+	@OneToMany (mappedBy = "prop")
 	private List<Veiculo> veiculos;
 
 	 /* Construct*/

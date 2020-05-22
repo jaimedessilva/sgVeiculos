@@ -1,7 +1,10 @@
 package com.sgveiculos.model;
 
 import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,9 +31,9 @@ public class Veiculo implements Serializable {
 	private int anoFab;
 	private double valor;
 	private String placa;
-	@ManyToOne //Many Veiculos to One Proprietario
+	@ManyToOne (optional = true)
 	@JoinColumn(name="id_prop") //id do Proprietario
-	Proprietario prop;
+	private Proprietario prop;
 	
 	/* Construct */
 	public Veiculo() {}
