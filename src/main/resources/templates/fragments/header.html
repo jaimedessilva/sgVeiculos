@@ -257,6 +257,15 @@ select {
 	padding: 10px;
 	font-weight: bold;
 }
+.btn-logout {
+/*     border: 1px solid red; */
+	width: 50%;
+	height: 20px;
+	background: none;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+}
 
 .input-group-addon {
 	background: white;
@@ -267,8 +276,8 @@ select {
 }
 /*End CSS*/
 </style>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -303,8 +312,16 @@ select {
 						<li><a href="#"><i class="fa fa-fw fa-cog"></i> 
 								Change Password</a></li>
 						<li class="divider"></li>
-						<li><a href="logout"><i class="fa fa-fw fa-power-off"></i>
-								Logout</a></li>
+						<li>
+						
+						<form th:action="@{/logout}" method="post">
+						<i class="fa fa-fw fa-power-off" style="margin-left: 16px"></i>
+						<input type="submit" value="Logout" class="btn-logout">
+						
+						
+								
+								</form>
+						</li>
 					</ul></li>
 			</ul>
 			

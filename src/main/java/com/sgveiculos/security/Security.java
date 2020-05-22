@@ -36,7 +36,11 @@ public class Security extends WebSecurityConfigurerAdapter {
 	                .and()
 	            .formLogin()
 	                .loginPage("/login")
-	                .permitAll();
+	                .permitAll()
+	            .and()
+	            .logout()
+	                .logoutUrl("/logout")
+	                .deleteCookies("JSSSS");
 	    }
 	/* Permit static images and css */
 	@Override
