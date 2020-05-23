@@ -30,7 +30,7 @@ public class Veiculo implements Serializable {
 	private int anoFab;
 	private double valor;
 	private String placa;
-	@ManyToOne (optional = true, cascade = CascadeType.MERGE)
+	@ManyToOne (optional = true)
 	@JoinColumn(name="id_prop") //id do Proprietario
 	private Proprietario prop;
 	
