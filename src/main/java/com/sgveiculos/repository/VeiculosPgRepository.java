@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
+import com.sgveiculos.model.Proprietario;
 import com.sgveiculos.model.Veiculo;
 
 /**Project: sgveiculos
@@ -19,7 +20,11 @@ import com.sgveiculos.model.Veiculo;
  *  Interface que faz a busca paginada de um veículo
  */
 public interface VeiculosPgRepository extends PagingAndSortingRepository<Veiculo, Long> {
+			/*
+			 *  Paginação Veiculos
+			 */
 			@Query("select e from Veiculo e")
 			List<Veiculo> getListOrder(Sort sort);
 			Page<Veiculo> findAll(Pageable pg);
+		
 }

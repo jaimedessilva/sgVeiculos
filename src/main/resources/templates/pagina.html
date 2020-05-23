@@ -20,27 +20,7 @@
 				<form action="#" th:action="@{/save-veiculo}" th:object="${veiculo}"
 					method="post">
 					<input type="text" th:field="*{id}" style="background: #ecf0f1" readonly> 
-					<input type="text" name="fabricante" th:field="*{fabricante}" style="background: #ecf0f1" readonly>
-					
-					<!-- 						<option value="AUDI" selected>AUDI</option> -->
-					<!-- 						<option value="CHEVROLET">CHEVROLET</option> -->
-					<!-- 						<option value="VOLKSWAGEN">VOLKSWAGEN</option> -->
-					<!-- 						<option value="FIAT">FIAT</option> -->
-					<!-- 						<option value="MERCEDES-BENZ">MERCEDES-BENZ</option> -->
-					<!-- 						<option value="CITROEN">CITROEN</option> -->
-					<!-- 						<option value="CHANA">CHANA</option> -->
-					<!-- 						<option value="HONDA">HONDA</option> -->
-					<!-- 						<option value="SUBARU">SUBARU</option> -->
-					<!-- 						<option value="FERRARI">FERRARI</option> -->
-					<!-- 						<option value="BUGATTI">BUGATTI</option> -->
-					<!-- 						<option value="LAMBORGHINI">LAMBORGHINI</option> -->
-					<!-- 						<option value="FORD">FORD</option> -->
-					<!-- 						<option value="HYUNDAI">HYUNDAI</option> -->
-					<!-- 						<option value="PEUGEOT">PEUGEOT</option> -->
-					<!-- 						<option value="TOYOTA">TOYOTA</option> -->
-					<!-- 						<option value="RENAULT">RENAULT</option> -->
-					<!-- 					</select>  -->
-					
+					<input type="text" name="fabricante" th:field="*{fabricante}" style="background: #ecf0f1" readonly>		
 					<input type="text" name="modelo" th:field="*{modelo}" required="required" maxlength="11"> 
 					<input type="text" name="anoFab" th:field="*{anoFab}" required="required" maxlength="4"> 
 					<input type="text" name="anoMod" th:field="*{anoMod}" required="required" maxlength="4"> 
@@ -53,9 +33,12 @@
 					<!-- 						        th:value="${prop.id}" -->
 					<!-- 						        th:text="${prop.id}"></option> -->
 					<!-- 					</select>	 -->
-					<input type="text" th:field="*{prop.nome}" placeholder="Proprietario" readonly> 
-					<input type="text" th:field="*{prop.id}" name="id_prop" placeholder="Id Proprietario" required="required">
-
+<!-- 					<input type="text" th:field="*{prop.nome}" placeholder="Proprietario" readonly>  -->
+<!-- 					<input type="text" th:field="*{prop.id}" name="id_prop" placeholder="Id Proprietario" required="required"> -->
+					<select th:field="*{prop}">
+<!-- 					<option value="nome" selected>Adicionar Proprietario</option> -->
+					<option th:each="prop : ${lst}" th:value="${prop.id}" th:text="${prop.nome}"></option>
+					</select>
 					<br>
 					<button type="Submit" class="btn btn-success">Salvar</button>
 					<a th:href="@{/delete-veiculo/{id}(id=${veiculo.id})}" class="btn btn-danger">Deletar</a>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proprietarios</title>
+</head>
+<body>
+	<form method="post">
+		<select>
+			<option value=null selected>Adicionar Proprietario</option>
+			<option th:each="prop : ${lst}" th:value="${prop.id}" th:text="${prop.nome}"></option>
+		</select> 
+	</form>
+
+
+
+</body>
+</html>

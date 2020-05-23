@@ -86,18 +86,29 @@ public class VeiculoController {
 	// Form Edit - Id
 	@GetMapping("/pagina/{id}")
 	public String showUpdateForm(@PathVariable("id") long id, Model model) {
+		//Consulta Simples por ID
 		Veiculo veiculo = veiculos.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Invalid Id:" + id));
-
+		//List de Proprietario p campo Select
+		List<Proprietario> lst = repository.findAllOrder();
+		
+		//Renderiza o Veiculo por ID
 		model.addAttribute("veiculo", veiculo);
+		//Renderiza a Lista de Proprietarios
+		model.addAttribute("lst", lst); //List de Proprietario
 		return "pagina";
 	}
+	/*
+	 *  Metodo que pega a lista de proprietario 
+	 *  em um select HTML
+	 */
 	// Form Edit Proprietario
 	@GetMapping("/edit-prop/{id}")
 	public String showUpdateFormP(@PathVariable("id") long id, Model model) {
+		//Busca Proprietario por Id
 		Proprietario p = repository.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Invalid Id:" + id));
-
+		//Renderiza
 		model.addAttribute("proprietario", p);
 		return "form-edit-prop";
 	}
@@ -108,7 +119,7 @@ public class VeiculoController {
 
 		model.addAttribute("veiculo", v);
 		return "detalhes-veiculo";
-	}	
+	}
 /*
  * ********************************************
  *  CRUD OPERATIONS
@@ -126,7 +137,9 @@ public class VeiculoController {
 	// Lista Paginada
 	@GetMapping("/list-veiculos")
 	public String ListOrder (@PageableDefault (size = 10, sort = "id") Pageable pg, Model model) {
+		//Paginação
 		Page<Veiculo> page = pgRep.findAll(pg);
+		//Ordenação
 		List<Sort.Order> lstSort = page.getSort().stream().collect(Collectors.toList());
 		if (lstSort.size() > 0) {
 			Sort.Order order = lstSort.get(0);
@@ -136,13 +149,16 @@ public class VeiculoController {
 		model.addAttribute("page", page );
 		return "list-veiculos";
 	}
-	// Lista Proprietarios
+	// Lista Proprietarios - ñ paginada
 	@GetMapping("/proprietarios")
 	public String getProprietarios(Model model) {
-		List<Proprietario> proprietarios = repository.findAll();
-		model.addAttribute("proprietarios", proprietarios);
+		//Lista proprietarios
+		List<Proprietario> lst = repository.findAllOrder();
+		//Renderiza a lista p View
+		model.addAttribute("proprietarios", lst);
 		return "list-proprietarios";
 	}
+	//Buscar por Nome
 	@PostMapping("/buscar")
 	public ModelAndView buscar (@RequestParam("nome") String nome) {
 		ModelAndView model = new ModelAndView("list-proprietarios");
@@ -171,5 +187,4 @@ public class VeiculoController {
 		veiculos.delete(veiculo);
 		return "redirect:/list-veiculos";
 	}
-
 }
