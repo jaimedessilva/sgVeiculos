@@ -18,25 +18,24 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * Em 15-05-2020 **/
 
 @Entity
-@Table(name="t_proprietario")
+@Table(name = "t_proprietario")
 public class Proprietario implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String email;
 	private String telefone;
 	private String cpf;
 	@JsonIgnore
-	@OneToMany (mappedBy = "prop")
+	@OneToMany(mappedBy = "prop")
 	private List<Veiculo> veiculos;
 
-	 /* Construct*/
+	/* Construct */
 	public Proprietario() {}
-
 	/*
 	 * Construct
 	 */
@@ -96,6 +95,7 @@ public class Proprietario implements Serializable {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
 	/* Getter */
 	public List<Veiculo> getVeiculos() {
 		return veiculos;
@@ -108,7 +108,10 @@ public class Proprietario implements Serializable {
 
 	@Override
 	public String toString() {
-		return "\n Prop id:" + id + "\n Nome:" + nome + "\n Email:" + email + "\n Telefone:" + telefone
+		return "\n Prop id:" + id 
+				+ "\n Nome:" + nome 
+				+ "\n Email:" + email 
+				+ "\n Telefone:" + telefone
 				+ "\n cpf:" + cpf;
 	}
 }

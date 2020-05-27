@@ -3,14 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proprietarios</title>
+<!-- JQuery Scripts -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
+<!-- Mascaras de Campos -->
+<script type="text/javascript">
+	$('.telefone').mask('(00) 0 0000-0000');
+	$('.dinheiro').mask('#.##0,00', {reverse: true});
+	$('.estado').mask('AA');
+	</script>
+
+<title>Teste</title>
 </head>
 <body>
+
+	
 	<form method="post">
 		<select>
 			<option value=null selected>Adicionar Proprietario</option>
 			<option th:each="prop : ${lst}" th:value="${prop.id}" th:text="${prop.nome}"></option>
-		</select> 
+		</select>
+		
+	<input type="text" name="telefone" class="telefone form-control" placeholder="(XX) 9 0000-0000" />
+	<input type="text" id="dinheiro" name="dinheiro" 
+	class="dinheiro form-control" placeholder="R$..Valor" style="height: 45px; width: "/>
+	<input type="text" id="estado" name="estado" class="estado form-control" placeholder="UF" />
+	
 	</form>
 
 

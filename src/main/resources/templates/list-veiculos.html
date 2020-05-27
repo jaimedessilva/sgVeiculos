@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
+	<!-- Mascaras de Campos -->
+	<script type="text/javascript">
+		$('.telefone').mask('(00) 0 0000-0000');
+		$('.dinheiro').mask('#.##0,00', {reverse: true});
+		$('.estado').mask('AA');
+	</script>
     <title>Veiculos</title>
 </head>
 <body>
@@ -40,7 +49,7 @@
                             <td th:text="${veiculo.anoFab}"></td>
                             <td th:text="${veiculo.anoMod}"></td>
                             <td th:text="${veiculo.placa}"></td>
-                            <td th:text="${veiculo.valor}"></td>
+                            <td th:text="${veiculo.valor}" class="dinheiro"></td>
                         
 <!--                             <td th:text="${veiculo.prop}"></td> -->
                             <td><a th:href="@{/pagina/{id}(id=${veiculo.id})}" class="edit" title="Edit" data-toggle="tooltip">

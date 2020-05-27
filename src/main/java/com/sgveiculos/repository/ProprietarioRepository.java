@@ -12,10 +12,10 @@ import com.sgveiculos.model.Proprietario;
  * Em 17-05-2020 **/
 @Repository
 public interface ProprietarioRepository extends JpaRepository<Proprietario, Long>{
-	/*
-	 * 
-	 *     Find By Name Ignore Case
-	 */
+/*
+ * 
+ *     Find By Name Ignore Case
+ */
 	//@Query("select e from Proprietario e where nome like concat(?1, '%')")
 	 @Query("select e from Proprietario e where lower(e.nome) like lower(concat('%', concat( ?1, '%')))")
 	 List<Proprietario> findByNome(String nome);
