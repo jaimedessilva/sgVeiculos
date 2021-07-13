@@ -1,19 +1,37 @@
 # SG-VEICULOS
-<h1>
-            Sobre o Sistema
-</h1>
-<<<<<<< HEAD
-<h2>SG-Veiculos</h2>
-<h3><a href="https://app-sgveiculos.herokuapp.com/">Link</a></h3>
-=======
-<h3><a href="https://app-sgveiculos.herokuapp.com/">Link App-sgveiculos</a></h3>
->>>>>>> f68ed6a28a8a6ac284e6685dda2169e0b0d5b7ee
-<h4>Projeto que simula um sistema de Gestão de Veículos e
-Proprietarios com operações de Busca, Cadastro Atualização e Exclusão de Dados.<br> 
-Tambem disponibilizo uma Api Rest para consumo, link no próprio Sistema</h4>
-			
-<h4>Tecnologias Usadas:<br></br> <b>Java 8</b>, <b>Spring Boot, Spring Security,
-Spring Data-JPA, Template Engine Thymeleaf e Banco de Dados
-PostgreSQL</h4>
 
+## SG-Veiculos
 
+<img src="./src/main/resources/static/icon/heroku-icon.svg" style="width: 30px">
+<br>
+<a href="https://app-sgveiculos.herokuapp.com/">
+https://app-sgveiculos.herokuapp.com</a>
+
+##
+<img src="./thumbnail.jpg" style="width: 250px"/>
+<img src="./src/main/resources/static/images/Screenshot.jpg" style="width: 250px"/>
+
+##
+
+# Tecnologias Usadas:
+
+## Backend
+
+* Java 8
+* Spring Boot
+* Spring Security
+* Spring Data-JPA
+* BD PostgreSQL
+
+## FrontEnd
+
+* Html
+* Css
+* Bootstrap
+* Template Engine Thymeleaf
+
+##
+Projeto de Gestão de veículos e proprietarios com operações de Busca, Cadastro Atualização e Exclusão de Dados.
+Disponibilizando uma Api Rest para integração com outros sistemas e tambem por qualquer aplicação frontend.
+
+## Status: Prototipo Inicial
