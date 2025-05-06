@@ -2,11 +2,6 @@
 
 ## SG-Veiculos
 
-<img src="./src/main/resources/static/icon/heroku-icon.svg" style="width: 30px">
-<br>
-<a href="https://app-sgveiculos.herokuapp.com/">
-https://app-sgveiculos.herokuapp.com</a>
-
 ##
 <img src="./thumbnail.jpg" style="width: 250px"/>
 <img src="./src/main/resources/static/images/Screenshot.jpg" style="width: 250px"/>
